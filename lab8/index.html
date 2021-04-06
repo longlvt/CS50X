@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', () => {
+                let result = document.querySelector('#result');
+                let btnSun = document.querySelector('#sun');
+                let btnCloud = document.querySelector('#cloud');
+                let btnRain = document.querySelector('#rain');
+                btnSun.addEventListener('click', () => {
+                    btnSun.style.backgroundColor = "red";
+                    result.innerHTML = 'Incorrect!';
+                    btnRain.style.backgroundColor = "#d9edff";
+                    btnCloud.style.backgroundColor = "#d9edff";
+                });
+                btnRain.addEventListener('click', () => {
+                    btnRain.style.backgroundColor = "red";
+                    result.innerHTML = 'Incorrect!';
+                    btnSun.style.backgroundColor = "#d9edff";
+                    btnCloud.style.backgroundColor = "#d9edff";
+                });
+                btnCloud.addEventListener('click', () => {
+                    btnCloud.style.backgroundColor = "green";
+                    result.innerHTML = 'Correct!';
+                    btnSun.style.backgroundColor = "#d9edff";
+                    btnRain.style.backgroundColor = "#d9edff";
+                });
+
+                // Part 2
+                document.querySelector('form').addEventListener('submit', () => {
+                    let mathAns = document.querySelector('#mathAns');
+                    let mathResult = document.querySelector('#mathResult');
+                    if (mathAns) {
+                        let mathValue = mathAns.value;
+                        mathResult.innerHTML = mathValue;
+                        if (mathValue !== '4') {
+                            mathResult.innerHTML = 'Incorrect!';
+                            mathAns.textContent = mathValue;
+                            mathAns.style.color = 'red';
+                        }
+                        else {
+                            mathResult.innerHTML = 'Correct!';
+                            mathAns.textContent = mathValue;
+                            mathAns.style.color = 'green';
+                        }
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What's the weather like today?</h3>
+                <p id="result"></p>
+                <button type='submit' id="sun">Sunny</button>
+                <button type='submit' id="cloud">Cloudy</button>
+                <button type='submit' id="rain">Rainy</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>The result of 2 + 2 is: </h3>
+                <p id="mathResult"></p>
+                <form>
+                    <input id="mathAns"
+                        placeholder="Your answer:"
+                        autocomplete="off"
+                        autofocus
+                        type="text">
+                    <input type="submit" value='Confirm'>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>

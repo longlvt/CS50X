@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: because it takes less time to handle to sorted array (which is the best case for bubble sort).
+
+sort2 uses: merge sort
+
+How do you know?: because as the size of input data increase, it takes less time to sort than the other 2.
+
+sort3 uses: selection sort
+
+How do you know?: because no matter how the data is arranged, the time for it to handle are almost the same.

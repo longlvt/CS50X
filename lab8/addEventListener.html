@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            function greet()
+            {
+                // Get the value from the attribute "id" of 'name'
+                let name = document.querySelector('#name').value;
+                alert('Hello, '+ name);
+            }
+
+            // function listen()
+            // {
+            //     // Find the 'form', then add the Event-Listener, listening to the 'submit' event. When that event happened, call the 'greet' function.
+            //     document.querySelector('form').addEventListener('submit', greet); // Tell the browser to call 'greet' function when it's ready.
+            // }
+
+            // When the DOM content is loaded successfully (the tags have been loaded), call the 'listen' function.
+            // document.addEventListener('DOMContentLoaded', listen);
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('form').addEventListener('submit', () => {
+                    // Get the value from the attribute "id" of 'name'
+                    let name = document.querySelector('#name').value;
+                    alert('Hello, '+ name);
+                });
+            });
+
+        </script>
+        <title>
+            hello, title
+        </title>
+    </head>
+    <body>
+        <form>
+            <input id="name"
+                placeholder="Your name:"
+                autocomplete="off"
+                autofocus
+                type="text">
+            <input type="submit" value='Greet'>
+        </form>
+
+        <!-- <script>
+            function greet()
+            {
+                // Get the value from the attribute "id" of 'name'
+                let name = document.querySelector('#name').value;
+                alert('Hello, '+ name);
+            }
+
+            // Find the 'form', then add the Event-Listener, listening to the 'submit' event. When that event happened, call the 'greet' function.
+            document.querySelector('form').addEventListener('submit', greet); // Tell the browser to call 'greet' function when it's ready.
+        </script> -->
+    </body>
+</html>

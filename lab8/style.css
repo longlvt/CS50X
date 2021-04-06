@@ -1,0 +1,22 @@
+
+main /*tag-selector*/
+{
+    font-size: medium;
+    text-align: center;
+}
+
+footer /*tag-selector*/
+{
+    font-size: small;
+    text-align: center;
+}
+
+.large /*class-selector*/
+{
+    font-size: large;
+}
+
+.centered
+{
+    text-align: center;
+}
