@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>No any stocks found.</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Action</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{row.symbol}}</td>
+                    <td>{{row.action}}</td>
+                    <td>{{row.shares}}</td>
+                    <td>{{row.price}}</td>
+                    <td>{{row.datetime}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

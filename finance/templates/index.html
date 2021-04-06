@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h2>No any stocks found.</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in stocks %}
+                <tr>
+                    <td>{{row.symbol}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.shares}}</td>
+                    <td>{{row.price | usd}}</td>
+                    <td>{{(row.shares * row.price) | usd}}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4"><b>Cash</b></td>
+                <td><b>{{ cash | usd }}</b></td>
+            </tr>
+            <tr>
+                <td colspan="4"><b>Estimate Balance</b></td>
+                <td><b>{{ totalBalance | usd }}</b></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
